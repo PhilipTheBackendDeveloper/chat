@@ -1,6 +1,6 @@
 import React from "react";
 import { View, Text, StyleSheet, TouchableOpacity, Image } from "react-native";
-import { Ionicons } from "react-native-vector-icons";
+import { Ionicons } from "@expo/vector-icons";
 
 const ChatBubble = ({ role, text, image, onSpeech }) => {
   return (
@@ -14,7 +14,7 @@ const ChatBubble = ({ role, text, image, onSpeech }) => {
       <Text style={styles.chatText}>{text}</Text>
       {role === "model" && (
         <TouchableOpacity onPress={onSpeech} style={styles.speakerIcon}>
-          <Ionicons name="volume-high-outline" size={24} color="#fff" />
+          <Ionicons name="volume-high-outline" size={20} color="#fff" />
         </TouchableOpacity>
       )}
     </View>
@@ -24,18 +24,18 @@ const ChatBubble = ({ role, text, image, onSpeech }) => {
 const styles = StyleSheet.create({
   chatItem: {
     marginBottom: 10,
-    padding: 10,
-    borderRadius: 10,
-    maxWidth: "70%",
-    position: "relative", // added for positioning the speaker icon
+    padding: 12,
+    borderRadius: 12,
+    maxWidth: "80%",
+    position: "relative",
   },
   userChatItem: {
     alignSelf: "flex-end",
     backgroundColor: "#0074FF",
   },
   modelChatItem: {
-    alignSelf: "flex-start", // Changed to "flex-start" for model bubbles
-    backgroundColor: "#000",
+    alignSelf: "flex-start",
+    backgroundColor: "#333",
   },
   chatText: {
     fontSize: 16,
@@ -50,7 +50,7 @@ const styles = StyleSheet.create({
     width: 50,
     height: 50,
     borderRadius: 10,
-    marginBottom: 5, // Optional spacing between image and text
+    marginBottom: 5,
   },
 });
 
